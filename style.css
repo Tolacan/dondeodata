@@ -1,0 +1,104 @@
+/* Estilos Generales */
+body {
+    font-family: sans-serif; /* Puedes cambiar la fuente si lo deseas */
+    background-color: #458c8c; /* Un color verde azulado similar al de la imagen */
+    color: #ffffff;
+    margin: 0;
+    padding: 20px; /* Espacio alrededor del contenido */
+    display: flex;
+    justify-content: center; /* Centra el panel si el body ocupa toda la ventana */
+    min-height: 100vh;
+    align-items: center; /* Centra verticalmente */
+}
+
+.navigation-panel {
+    max-width: 1200px; /* Ancho máximo para el contenedor */
+    width: 100%;
+}
+
+h2 {
+    font-weight: normal;
+    margin-bottom: 25px;
+    padding-left: 10px; /* Pequeño espacio a la izquierda como en la imagen */
+}
+
+/* Contenedor de las Tarjetas (Grid) */
+.card-container {
+    display: grid;
+    /* Crea 4 columnas de igual tamaño */
+    grid-template-columns: repeat(4, 1fr);
+    /* Espacio entre las tarjetas */
+    gap: 20px;
+}
+
+/* Estilo de cada Tarjeta */
+.card {
+    background-color: transparent; /* Fondo transparente, el color viene del body */
+    border: 1px solid rgba(255, 255, 255, 0.8); /* Borde blanco semitransparente */
+    padding: 20px;
+    display: flex; /* Para alinear icono y contenido */
+    align-items: flex-start; /* Alinea los items al inicio (arriba) */
+    min-height: 100px; /* Altura mínima para mantener consistencia */
+}
+
+/* Estilo del Icono */
+.card-icon {
+    font-size: 2em; /* Tamaño del icono placeholder */
+    margin-right: 15px; /* Espacio entre el icono y el texto */
+    line-height: 1; /* Ajusta la altura de línea del icono */
+    flex-shrink: 0; /* Evita que el icono se encoja */
+}
+
+.card-icon .icon-placeholder {
+    /* Puedes añadir estilos específicos al placeholder si es necesario */
+    display: inline-block;
+    width: 35px; /* Ancho fijo para alinear mejor */
+    text-align: center;
+}
+
+/* Estilo del Contenido de la Tarjeta (Título y Descripción) */
+.card-content {
+    flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
+}
+
+.card h4 {
+    margin: 0 0 5px 0; /* Elimina margen superior, añade inferior */
+    font-size: 1.1em;
+    font-weight: normal;
+}
+
+.card p {
+    margin: 0;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.85); /* Color ligeramente más tenue para la descripción */
+    line-height: 1.4;
+}
+
+/* --- Responsividad --- */
+
+/* Para pantallas más pequeñas (tablets) - 2 columnas */
+@media (max-width: 992px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    }
+    .navigation-panel {
+        max-width: 700px;
+    }
+}
+
+/* Para pantallas aún más pequeñas (móviles) - 1 columna */
+@media (max-width: 576px) {
+    .card-container {
+        grid-template-columns: 1fr; /* 1 columna */
+    }
+    .navigation-panel {
+        max-width: 100%;
+    }
+    .card {
+        min-height: auto; /* Altura automática en móviles */
+    }
+     h2 {
+        text-align: center;
+        padding-left: 0;
+    }
+}
